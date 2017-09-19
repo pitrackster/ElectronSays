@@ -2,9 +2,9 @@
 
 Super simple implementation of the game Simon Say's
 
+- Electron
 - ReactJS
 - Webaudio API
-- Fonts from https://fonts.google.com/
 
 ### Original game infos
 
@@ -28,25 +28,23 @@ Super simple implementation of the game Simon Say's
 - Sequence length: 6‐13, tone duration 0.32 seconds, pause between tones 0.05 seconds
 - Sequence length: 14‐31, tone duration 0.22 seconds, pause between tones 0.05 seconds
 
-
 ### Install
 
-`npm install && npm run webpack`
+`npm install && npm run start`
 
 
 ### Scripts
 
 - `npm run webpack` - build javascript
 - `npm run watch` - build javascript and watch for changes
-
-### Known issues
-
-- css not working well on firefox (tiles background)
-- touch events works out of the box on Firefox 55.0.2 (no need to handle specific events) but not in Chrome Version 61.0.3163.79...
+- `npm run start` - build javascript and starts electron app
 
 ### TODO
 
-- template for game / disposition of 'squares'
-- make it rock solid (avoid user to press to tiles at once)
+- add game rules (score incrementation depending on the current level, more pads, the user is currently not able to press a pad once more than requested...)
+- make it rock solid (for exemple consider that the user can press to pads at once on touch screens)
+- save game state
+- add options (username scores sounds colors ...)
+- allow multiple game styles/modes and layouts (Pads à la "Space Invaders" for exemple)
 
 ...

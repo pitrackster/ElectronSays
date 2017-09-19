@@ -1,5 +1,8 @@
 node_modules
 downloaded/*
-app/*
+app/app.js
+app/css/app.css
 npm-debug.log
 !.keep
+
+yarn.lock
