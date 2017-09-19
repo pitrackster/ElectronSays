@@ -5,9 +5,6 @@ $red: red;
 $yellow: #FFD904;
 $blue: blue;
 
-$lighten-amount: 40%;
-
-
 body {
     background: #A38762;
     display: flex;
@@ -19,7 +16,7 @@ body {
 
 .game-text {
     color: #777;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 100;
     &.sm {
         font-size: 40px;
@@ -70,26 +67,6 @@ body {
     border: 1px solid #aaa;
     border-radius: 5px;
 }
-
-/*.highlight {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    &.yellow {
-        background-image: radial-gradient(circle, lighten($yellow, $lighten-amount) 0, $yellow 70%)
-    }
-    &.red {
-        background-image: radial-gradient(circle, lighten($red, $lighten-amount) 0, $red 70%);
-    }
-    &.green {
-        background-image: radial-gradient(circle, lighten($green, $lighten-amount) 0, $green 70%);
-    }
-    &.blue {
-        background-image: radial-gradient(circle, lighten($blue, $lighten-amount) 0, $blue 70%);
-    }
-}*/
-
 
 .green {
     background: $green;
