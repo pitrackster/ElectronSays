@@ -32,9 +32,7 @@ class App extends Component {
   render() {
     return(
   
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
+      <div className="app">
           
             {this.state.view === 'home' &&
               <Home onStart={() => this.changeView('game')} />
@@ -45,9 +43,8 @@ class App extends Component {
             {this.state.view === 'end' &&
               <End level={this.state.level} score={this.state.score} onRestart={() => this.changeView('game')} />
             }
-          </div>
-        </div>      
       </div>
+
     )
   }
 }

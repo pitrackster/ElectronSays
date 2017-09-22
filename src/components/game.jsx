@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {PropTypes as T} from 'prop-types'
+import classNames from 'classnames'
 
 import Synth from './../models/synth'
 
@@ -146,42 +147,56 @@ class Game extends Component {
   render() {
     return(
         <div className="game">
-          <div className="game-infos-row">
-            <div className="game-text md">{`Level: ${this.props.level}`}</div>
-            <div className="game-text md">{`Score: ${this.props.score}`}</div>
+          
+          <div className="text-row">
+            <div className="game-text md">{`${this.props.level} - ${this.props.score}`}</div>  
           </div>
           <div className="pads-row">
-            {this.buttons.filter(b => b.color === 'red' || b.color === 'yellow').map((button, index) => 
-              <div className="pad-wrapper" 
-                  key={index}                  
-                  onTouchStart={(e) => this.recordUserSequence(e, button)}
-                  onTouchEnd={(e) => this.stop(e)}
-                  onMouseDown={(e) => this.recordUserSequence(e, button)}
-                  onMouseUp={() => this.stop()}>
-                  {this.state.currentButton === button.color ? 
-                    <div className={`pad ${button.color} highlight`} id={button.color}></div>
-                    :
-                    <div className={`pad ${button.color}`} id={button.color}></div>
-                  }
-              </div>            
-            )} 
-          </div>
-          <div className="pads-row">
-          {this.buttons.filter(b => b.color === 'blue' || b.color === 'green').map((button, index) => 
-            <div className="pad-wrapper" 
-                key={index}                  
-                onTouchStart={(e) => this.recordUserSequence(e, button)}
-                onTouchEnd={(e) => this.stop(e)}
-                onMouseDown={(e) => this.recordUserSequence(e, button)}
-                onMouseUp={() => this.stop()}>
-                {this.state.currentButton === button.color ? 
-                  <div className={`pad ${button.color} highlight`} id={button.color}></div>
-                  :
-                  <div className={`pad ${button.color}`} id={button.color}></div>
-                }
-            </div>            
-          )} 
-        </div>
+            <div className="pads-col">
+              {this.buttons.slice(0, 2).map((button, index) => 
+                  <div className="pad-wrapper" 
+                    key={index}                  
+                    onTouchStart={(e) => this.recordUserSequence(e, button)}
+                    onTouchEnd={(e) => this.stop(e)}
+                    onMouseDown={(e) => this.recordUserSequence(e, button)}
+                    onMouseUp={() => this.stop()}>
+                    <div 
+                      className={classNames(
+                        'pad',                        
+                        button.color,
+                        {'bottom-left': index === 0},
+                        {'bottom-right': index === 1},
+                        {'highlight': this.state.currentButton === button.color}
+                      )}
+                      id={button.color}>
+                    </div>            
+                  </div>             
+              )} 
+            </div>
+            <div className="pads-col">
+                {this.buttons.slice(2, 4).map((button, index) => 
+                  <div className="pad-wrapper" 
+                    key={index}                  
+                    onTouchStart={(e) => this.recordUserSequence(e, button)}
+                    onTouchEnd={(e) => this.stop(e)}
+                    onMouseDown={(e) => this.recordUserSequence(e, button)}
+                    onMouseUp={() => this.stop()}>
+                    <div 
+                      className={classNames(
+                        'pad',                        
+                        button.color,
+                        {'top-left': index === 0},
+                        {'top-right': index === 1},
+                        {'bottom-left': index === 2},
+                        {'bottom-right': index === 3},
+                        {'highlight': this.state.currentButton === button.color}
+                      )}
+                      id={button.color}>
+                    </div>            
+                  </div>             
+              )} 
+            </div>
+          </div>                            
         </div>
       )
   }

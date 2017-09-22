@@ -1,5 +1,4 @@
 node_modules
-downloaded/*
 app/app.js
 app/css/app.css
 npm-debug.log

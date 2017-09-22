@@ -4,14 +4,21 @@ $green: green;
 $red: red;
 $yellow: #FFD904;
 $blue: blue;
+$bg-color:#A38762;
 
-body {
-    background: #A38762;
+html, body {
+    margin: 0;
+    padding: 0;    
+}
+
+.app {
+    background: $bg-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
+    height: 100vh;
 }
 
 .game-text {
@@ -32,24 +39,29 @@ body {
     }
 }
 
-/* GAME COMP */
+.home {
+    text-align: center;
+}
 
+/* GAME COMP */
 .game {
+    width: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+.text-row {
+    width: 100%;
     justify-content: center;
 }
 
-.game-infos-row {
+.pads-row{
     display: flex;
-    justify-content: space-between;
-    color: white;
-    margin-bottom: 35px;
+    flex-direction: row;
 }
-
-.pads-row {
-    display: flex;
-    justify-content: space-between;
+.pads-col {
+    width: 100%;
 }
 
 .pad-wrapper {
@@ -58,23 +70,29 @@ body {
     align-items: center;
     cursor: pointer;
     width: 100%;
-    height: 200px;
+    height: 30vh;
 }
 
 .pad {
-    width: 95%;
+    width: 65%;
     height: 95%;
     border: 1px solid #aaa;
     border-radius: 5px;
+    &.top-left, &.bottom-right {
+        transform: skew(20deg);
+    }
+    &.top-right, &.bottom-left {
+        transform: skew(-20deg);
+    }
 }
+
+
 
 .green {
     background: $green;
-
     &.highlight {
         background: lighten($green, 20%)
     }
-
 }
 
 .yellow {
