@@ -8,11 +8,11 @@ class End extends Component {
 
   render() {
     return (
-        <div className="end">
-          <div className="game-text sm">{`_*_ Level ${this.props.level} - Score ${this.props.score} _*_`}</div>          
-          <div className="game-text sm pointer" onClick={() => this.props.onRestart('game')}>{'* Retry *'}</div>  
-        </div>
-      )
+      <div className="end">
+        <div className="game-text sm">{`_*_ Level ${this.props.level} - Score ${this.props.score} _*_`}</div>          
+        <div className="game-text sm pointer" onClick={() => this.props.onRestart('game')}>{'* Retry *'}</div>  
+      </div>
+    )
   }
 }
 

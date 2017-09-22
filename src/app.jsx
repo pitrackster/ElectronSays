@@ -31,20 +31,17 @@ class App extends Component {
 
   render() {
     return(
-  
       <div className="app">
-          
-            {this.state.view === 'home' &&
-              <Home onStart={() => this.changeView('game')} />
-            }
-            {this.state.view === 'game' &&
-              <Game level={this.state.level} score={this.state.score} updateLevel={(level) => this.updateLevel(level)} updateScore={(score) => this.updateScore(score)} onEnd={() => this.changeView('end')} />
-            }
-            {this.state.view === 'end' &&
-              <End level={this.state.level} score={this.state.score} onRestart={() => this.changeView('game')} />
-            }
+        {this.state.view === 'home' &&
+          <Home onStart={() => this.changeView('game')} />
+        }
+        {this.state.view === 'game' &&
+          <Game level={this.state.level} score={this.state.score} updateLevel={(level) => this.updateLevel(level)} updateScore={(score) => this.updateScore(score)} onEnd={() => this.changeView('end')} />
+        }
+        {this.state.view === 'end' &&
+          <End level={this.state.level} score={this.state.score} onRestart={() => this.changeView('game')} />
+        }
       </div>
-
     )
   }
 }

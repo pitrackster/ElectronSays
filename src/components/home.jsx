@@ -17,11 +17,11 @@ class Home extends Component {
 
   render() {
     return(
-        <div className="home">
-            <div className="game-text lg">Super Simple Simon Game</div>            
-            <span className="game-text md pointer" onClick={() => this.props.onStart('game')}>Start</span>          
-        </div>
-      )
+      <div className="home">
+        <div className="game-text lg">Super Simple Simon Game</div>            
+        <span className="game-text md pointer" onClick={() => this.props.onStart('game')}>Start</span>          
+      </div>
+    )
   }
 }
 

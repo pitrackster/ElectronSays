@@ -146,13 +146,12 @@ class Game extends Component {
 
   render() {
     return(
-        <div className="game">
-          
-          <div className="text-row">
-            <div className="game-text md">{`${this.props.level} - ${this.props.score}`}</div>  
-          </div>
-          <div className="pads-row">
-            <div className="pads-col">
+      <div className="game">          
+        <div className="text-row">
+          <div className="game-text md">{`${this.props.level} - ${this.props.score}`}</div>  
+        </div>
+        <div className="pads-row">
+          <div className="pads-col">
               {this.buttons.slice(0, 2).map((button, index) => 
                   <div className="pad-wrapper" 
                     key={index}                  
@@ -172,8 +171,8 @@ class Game extends Component {
                     </div>            
                   </div>             
               )} 
-            </div>
-            <div className="pads-col">
+          </div>
+          <div className="pads-col">
                 {this.buttons.slice(2, 4).map((button, index) => 
                   <div className="pad-wrapper" 
                     key={index}                  
@@ -195,10 +194,10 @@ class Game extends Component {
                     </div>            
                   </div>             
               )} 
-            </div>
-          </div>                            
-        </div>
-      )
+          </div>
+        </div>                            
+      </div>
+    )
   }
 }
 
