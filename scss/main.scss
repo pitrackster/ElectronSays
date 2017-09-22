@@ -77,7 +77,6 @@ html, body {
     width: 65%;
     height: 95%;
     border: 1px solid #aaa;
-    border-radius: 5px;
     &.top-left, &.bottom-right {
         transform: skew(20deg);
     }
@@ -85,8 +84,6 @@ html, body {
         transform: skew(-20deg);
     }
 }
-
-
 
 .green {
     background: $green;
